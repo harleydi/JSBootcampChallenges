@@ -20,7 +20,18 @@ function stringReverse(str) {
 
 // do not use built in slice method.
 function slicer(originalString, startIdx, endIdx) {
-
+  let output = []
+	for (let i = 0; i < originalString.length; i++) {
+    if (startIdx === undefined && endIdx === undefined){
+      return originalString
+    } else if (i >= startIdx && i <= endIdx) {
+      output.push(originalString[i])
+    } else if (i >= startIdx) {
+      output.push(originalString[i])
+    }
+  }
+  output = output.join('')
+  return output
 }
 
 function addTheEvens(num) {
